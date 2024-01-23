@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load static %}
+<div id="gn-hero" class="gn-hero" style="background-image: url('{% static 'img/2021-banner-1980x970.jpg' %}');">
+    <div class="jumbotron">
+        <div class="gn-hero-description">
+            <h1><span class="highlight">{% trans 'UTU Geospatial data service' %}</span></h1>
+            <p><span class="highlight">{% trans 'Share your world with us' %}</span></p>
+        </div>
+        <p class="gn-hero-tools">
+            <a class="btn btn-default btn-lg" id="browse-data" href="/catalogue/" role="button">
+                {% trans 'Browse data' %} &gt;&gt;
+            </a>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+{% extends "geonode_base.html" %}
+
+{% load i18n %}
+{% block title %} {% trans "About us" %} — {{ block.super }} {% endblock %}
+
+{% block body_outer %}
+<div class="page-header">
+    <h1>{% blocktrans %}About us{% endblocktrans %}</h1>
+</div>
+<h2 id="service">{% blocktrans %}What is UTU Geospatial data service?{% endblocktrans %}</h2>
+<p>{% blocktrans %}UTU Geospatial data service is an open science geospatial content management solution where individual researchers and research groups can share and store their geospatial data. Other users – community members or visitors – can then explore, view, and download these shared layers. All geospatial layers are visually represented on a map interface, which is provided by open-source solutions OpenLayers and OpenStreetMap.{% endblocktrans %}</p>
+<p>{% blocktrans %}The data management and publication activities of the service are targeted for all researchers within University of Turku, whereas the data utilization activities are targeted for all members of the public.{% endblocktrans %}</p>
+<p>{% blocktrans %}UTU Geospatial data service is part of University of Turku data infrastructure. It contributes to UTU open science and research transparency principles as well as to the UTU Strategy 2030 strategic profile Future technologies and digital society. Read more about UTU research data policies here: <a href="https://www.utu.fi/en/research/open-science/research-data-and-data-policy" target="_blank" rel="noreferrer">https://www.utu.fi/en/research/open-science/research-data-and-data-policy</a>.{% endblocktrans %}</p>
+
+<h2 id="stakeholders">{% blocktrans %}Stakeholders{% endblocktrans %}</h2>
+<p>{% blocktrans %}UTU Geospatial data service was initiated by the Department of Geography and Geology of University of Turku. Background maintenance is supported by UTU IT services.{% endblocktrans %}</p>
+<p>{% blocktrans %}Next development steps tie the service more closely to Turku University Library services that will provide permanent DOI’s for published research datasets.{% endblocktrans %}</p>
+<h2 id="geonode">{% blocktrans %}GeoNode platform{% endblocktrans %}</h2>
+<p>{% blocktrans %}GeoNode is an open-source spatial data infrastructure platform. The platform provides a structure for storing and displaying geospatial datasets with extensive modifying possibilities for visual design and additional functions, such as map solutions, early warning systems, and other analysis tools. GeoNode is an initiative by the Open Source Geospatial Foundation (OSGeo). More information about GeoNode: <a href="https://geonode.org/" target="_blank" rel="noreferrer">https://geonode.org/</a>.{% endblocktrans %}</p>
+{% endblock %}

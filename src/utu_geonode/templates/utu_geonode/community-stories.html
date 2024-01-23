@@ -1,0 +1,37 @@
+{% load i18n %}
+{% load static %}
+
+{% load utu_geonode_tags %}
+{% get_most_recently_added_featured_dataset as most_recently_added_featured_layer %}
+
+<div class="utu-home-cards">
+    <div class="utu-home-card">
+        <a href="https://blog.geonode.utu.fi/news-stories-events/" target="_blank" rel="noreferrer">
+            <div class="community-stories-card" style="background-image: url('{% static 'img/news-stories-events_box.jpg' %}');">
+                <p>{% trans "NEWS, STORIES" %}<br/>{% trans "& EVENTS" %}</p>
+            </div>
+        </a>
+    </div>
+    <div class="utu-home-card">
+        <a href="https://blog.geonode.utu.fi/associations-between-local-land-use-land-cover-and-place-based-landscape-service-patterns-in-rural-tanzania/" target="_blank" rel="noreferrer">
+            <div class="community-stories-card" style="background-image: url('{% static 'img/data-of-the-month_box.jpg' %}');">
+                <p>{% trans "DATA OF THE" %}<br/>{% trans "MONTH" %}</p>
+            </div>
+        </a>
+    </div>
+    {% if most_recently_added_featured_layer %}
+        <div class="utu-home-card">
+            <a href="/catalogue/#/dataset/{{ most_recently_added_featured_layer.id }}">
+                <div class="community-stories-card" style="background-image: url('{{ most_recently_added_featured_layer.thumbnail_url }}');">
+                    <p>{% trans "MOST RECENTLY" %}<br/>{% trans "ADDED LAYER" %}</p>
+                </div>
+            </a>
+        </div>
+    {% else %}
+        <div class="utu-home-card">
+            <div class="community-stories-card">
+                <p>{% trans "NO DATA" %}</p>
+            </div>
+        </div>
+    {% endif %}
+</div>

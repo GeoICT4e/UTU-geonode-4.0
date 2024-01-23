@@ -1,0 +1,24 @@
+{% load i18n %}
+{% load base_tags %}
+
+{% with facet_type='home' %}
+{% facets as facets %}
+<div class="utu-home-cards">
+    <div class="utu-home-card">
+        <a href="/catalogue/#/search/filter/?f=dataset">
+            <i class="fa fa-database fa-2x"></i>{{ facets.dataset|default:_("No") }} {% blocktrans count counter=facets.dataset %}Dataset{% plural %}Datasets{% endblocktrans %}
+        </a>
+    </div>
+    <div class="utu-home-card">
+        <a href="/catalogue/#/search/filter/?f=map">
+            <i class="fa fa-map fa-2x"></i>{{ facets.map|default:_("No") }} {% blocktrans count counter=facets.map %}Map{% plural %}Maps{% endblocktrans %}
+        </a>
+    </div>
+    <div class="utu-home-card">
+        <a href="{% url 'profile_browse' %}">
+            <i class="fa fa-user fa-2x"></i>{{ facets.user|default:_("No") }} {% blocktrans count counter=facets.user %}Community member{% plural %}Community members{% endblocktrans %}
+        </a>
+    </div>
+</div>
+{% endwith %}
+

@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% load i18n %}
+{% load base_tags %}
+{% block content %}
+    <section id="showcase" class="gn-container gn-container-home">
+        <div class="gn-content">
+            {% include "utu_geonode/home-facets.html" %}
+        </div>
+    </section>
+    {{flayer.url}}
+    <section id="utugeonode-info" class="gn-container gn-container-home">
+        <div class="gn-content">
+            {% trans 'UTU Geospatial data service provides an open repository for geospatial research data sharing. Here you can <strong>discover and download</strong> geospatial layers, <strong>upload and share</strong> your own or research group’s data, create maps and get inspired by reading stories from our community. UTU Geospatial data service is part of the University of Turku data infrastructure.' %}
+        </div>
+    </section>
+    <section id="community-stories" class="gn-container gn-container-home">
+        <div class="gn-content">
+            {% include "utu_geonode/community-stories.html" %}
+        </div>
+    </section>
+{% endblock %}
+{% block container %}{% endblock %}
+{% block ms_scripts %}{% endblock %}
